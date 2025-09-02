@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - Google Classroom Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar (same as dashboard) -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i> Classroom Clone
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">
+                            <i class="nav-icon fas fa-home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="classes.html" class="nav-link active">
+                            <i class="nav-icon fas fa-users"></i>
+                            Classes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="materials.html" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            Materials
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="assignments.html" class="nav-link">
+                            <i class="nav-icon fas fa-tasks"></i>
+                            Assignments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="attendance.html" class="nav-link">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            Attendance
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="announcements.html" class="nav-link">
+                            <i class="nav-icon fas fa-bullhorn"></i>
+                            Announcements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="grades.html" class="nav-link">
+                            <i class="nav-icon fas fa-chart-line"></i>
+                            Grades
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="messages.html" class="nav-link">
+                            <i class="nav-icon fas fa-envelope"></i>
+                            Messages
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="nav-icon fas fa-chart-bar"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-link menu-toggle d-md-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title mb-0">Classes</h1>
+                </div>
+                
+                <div class="user-menu">
+                    <button class="btn btn-primary" data-modal="createClassModal">
+                        <i class="fas fa-plus"></i> Create Class
+                    </button>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Filters -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="form-label">Subject</label>
+                                <select class="form-control" id="subjectFilter">
+                                    <option value="">All Subjects</option>
+                                    <option value="Mathematics">Mathematics</option>
+                                    <option value="English">English</option>
+                                    <option value="Science">Science</option>
+                                    <option value="History">History</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Status</label>
+                                <select class="form-control" id="statusFilter">
+                                    <option value="">All Status</option>
+                                    <option value="active">Active</option>
+                                    <option value="archived">Archived</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Search</label>
+                                <input type="text" class="form-control" id="classSearch" placeholder="Search classes...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Classes Grid -->
+                <div class="row" id="classesGrid">
+                    <!-- Class Card 1 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card class-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title">Mathematics 101</h5>
+                                    <div class="dropdown">
+                                        <button class="btn btn-link btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="class-detail.html?id=1"><i class="fas fa-eye"></i> View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Edit Class</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fas fa-users"></i> Manage Students</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-archive"></i> Archive Class</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <p class="card-text">Introduction to basic mathematics concepts including algebra, geometry, and calculus.</p>
+                                
+                                <div class="class-meta mb-3">
+                                    <span class="badge badge-primary">Mathematics</span>
+                                    <span class="badge badge-success">Active</span>
+                                </div>
+                                
+                                <div class="class-stats">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <div class="stat-number">25</div>
+                                            <div class="stat-label">Students</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-number">12</div>
+                                            <div class="stat-label">Materials</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-number">8</div>
+                                            <div class="stat-label">Assignments</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="class-code mt-3">
+                                    <small class="text-muted">Class Code: <code>MATH101</code></small>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Created: Dec 1, 2024</small>
+                                    <a href="class-detail.html?id=1" class="btn btn-primary btn-sm">Enter Class</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Class Card 2 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card class-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title">English Literature</h5>
+                                    <div class="dropdown">
+                                        <button class="btn btn-link btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="class-detail.html?id=2"><i class="fas fa-eye"></i> View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Edit Class</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fas fa-users"></i> Manage Students</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-archive"></i> Archive Class</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <p class="card-text">Study of classic and contemporary literature, focusing on analysis and interpretation.</p>
+                                
+                                <div class="class-meta mb-3">
+                                    <span class="badge badge-primary">English</span>
+                                    <span class="badge badge-success">Active</span>
+                                </div>
+                                
+                                <div class="class-stats">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <div class="stat-number">18</div>
+                                            <div class="stat-label">Students</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-number">8</div>
+                                            <div class="stat-label">Materials</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-number">5</div>
+                                            <div class="stat-label">Assignments</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="class-code mt-3">
+                                    <small class="text-muted">Class Code: <code>ENG101</code></small>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Created: Nov 15, 2024</small>
+                                    <a href="class-detail.html?id=2" class="btn btn-primary btn-sm">Enter Class</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Class Card 3 -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card class-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title">Physics 201</h5>
+                                    <div class="dropdown">
+                                        <button class="btn btn-link btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="class-detail.html?id=3"><i class="fas fa-eye"></i> View Details</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit"></i> Edit Class</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fas fa-users"></i> Manage Students</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-archive"></i> Archive Class</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <p class="card-text">Advanced physics concepts including mechanics, thermodynamics, and quantum physics.</p>
+                                
+                                <div class="class-meta mb-3">
+                                    <span class="badge badge-primary">Science</span>
+                                    <span class="badge badge-success">Active</span>
+                                </div>
+                                
+                                <div class="class-stats">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <div class="stat-number">22</div>
+                                            <div class="stat-label">Students</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-number">15</div>
+                                            <div class="stat-label">Materials</div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-number">10</div>
+                                            <div class="stat-label">Assignments</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="class-code mt-3">
+                                    <small class="text-muted">Class Code: <code>PHY201</code></small>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted">Created: Oct 20, 2024</small>
+                                    <a href="class-detail.html?id=3" class="btn btn-primary btn-sm">Enter Class</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Classes pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Class Modal -->
+    <div id="createClassModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create New Class</h5>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="classForm">
+                    <div class="form-group">
+                        <label for="className" class="form-label">Class Name</label>
+                        <input type="text" class="form-control" id="className" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classSubject" class="form-label">Subject</label>
+                        <select class="form-control" id="classSubject" name="subject" required>
+                            <option value="">Select Subject</option>
+                            <option value="Mathematics">Mathematics</option>
+                            <option value="English">English</option>
+                            <option value="Science">Science</option>
+                            <option value="History">History</option>
+                            <option value="Geography">Geography</option>
+                            <option value="Computer Science">Computer Science</option>
+                            <option value="Art">Art</option>
+                            <option value="Music">Music</option>
+                            <option value="Physical Education">Physical Education</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="classDescription" name="description" rows="4" placeholder="Describe what this class will cover..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classSchedule" class="form-label">Schedule</label>
+                        <input type="text" class="form-control" id="classSchedule" name="schedule" placeholder="e.g., Monday, Wednesday, Friday 9:00 AM">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classRoom" class="form-label">Room/Location</label>
+                        <input type="text" class="form-control" id="classRoom" name="room" placeholder="e.g., Room 201 or Online">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classCapacity" class="form-label">Maximum Students</label>
+                        <input type="number" class="form-control" id="classCapacity" name="capacity" min="1" max="100" value="30">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="classroomApp.closeModal()">Cancel</button>
+                <button type="submit" form="classForm" class="btn btn-primary">Create Class</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

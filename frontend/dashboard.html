@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Google Classroom Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <a href="dashboard.html" class="sidebar-logo">
+                    <i class="fas fa-graduation-cap"></i> Classroom Clone
+                </a>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link active">
+                            <i class="nav-icon fas fa-home"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="classes.html" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            Classes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="materials.html" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            Materials
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="assignments.html" class="nav-link">
+                            <i class="nav-icon fas fa-tasks"></i>
+                            Assignments
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="attendance.html" class="nav-link">
+                            <i class="nav-icon fas fa-calendar-check"></i>
+                            Attendance
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="announcements.html" class="nav-link">
+                            <i class="nav-icon fas fa-bullhorn"></i>
+                            Announcements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="grades.html" class="nav-link">
+                            <i class="nav-icon fas fa-chart-line"></i>
+                            Grades
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="messages.html" class="nav-link">
+                            <i class="nav-icon fas fa-envelope"></i>
+                            Messages
+                            <span class="message-badge">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="nav-icon fas fa-chart-bar"></i>
+                            Reports
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <div class="top-bar">
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-link menu-toggle d-md-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title mb-0">Dashboard</h1>
+                </div>
+                
+                <div class="user-menu">
+                    <div class="search-container">
+                        <input type="text" class="form-control search-input" placeholder="Search..." data-search-type="all">
+                        <div class="search-results" data-type="all"></div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">5</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">New assignment posted</a></li>
+                            <li><a class="dropdown-item" href="#">Grade updated</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="notifications.html">View all</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <div class="user-avatar">JD</div>
+                            <span class="ms-2">John Doe</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                            <li><a class="dropdown-item" href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon text-primary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Total Classes</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon text-success">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="stat-number">45</div>
+                        <div class="stat-label">Materials</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon text-warning">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Pending Assignments</div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon text-info">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Average Grade</div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Quick Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <button class="btn btn-primary w-100 mb-2" data-modal="createClassModal">
+                                    <i class="fas fa-plus"></i> Create Class
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-success w-100 mb-2" data-modal="uploadMaterialModal">
+                                    <i class="fas fa-upload"></i> Upload Material
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-warning w-100 mb-2" data-modal="createAssignmentModal">
+                                    <i class="fas fa-plus"></i> New Assignment
+                                </button>
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn btn-info w-100 mb-2" data-modal="sendMessageModal">
+                                    <i class="fas fa-envelope"></i> Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Upcoming Events -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Recent Activity</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-item">
+                                    <div class="activity-icon text-primary">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <strong>New material uploaded</strong>
+                                        <p>Introduction to Web Development - Math 101</p>
+                                        <small class="text-muted">2 hours ago</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon text-success">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <strong>Assignment submitted</strong>
+                                        <p>Algebra Quiz - Math 101</p>
+                                        <small class="text-muted">1 day ago</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon text-warning">
+                                        <i class="fas fa-bullhorn"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <strong>New announcement</strong>
+                                        <p>Class schedule updated - Science 201</p>
+                                        <small class="text-muted">2 days ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Upcoming Events</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <div class="event-day">15</div>
+                                        <div class="event-month">Dec</div>
+                                    </div>
+                                    <div class="event-content">
+                                        <strong>Final Exam</strong>
+                                        <p>Mathematics 101 - Room 201</p>
+                                        <small class="text-muted">9:00 AM</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <div class="event-day">18</div>
+                                        <div class="event-month">Dec</div>
+                                    </div>
+                                    <div class="event-content">
+                                        <strong>Assignment Due</strong>
+                                        <p>Research Paper - English 101</p>
+                                        <small class="text-muted">11:59 PM</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="event-item">
+                                    <div class="event-date">
+                                        <div class="event-day">20</div>
+                                        <div class="event-month">Dec</div>
+                                    </div>
+                                    <div class="event-content">
+                                        <strong>Class Presentation</strong>
+                                        <p>Science Project - Science 201</p>
+                                        <small class="text-muted">2:00 PM</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Attendance Overview</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="attendanceChart" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Grade Progress</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="gradeChart" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <!-- Create Class Modal -->
+    <div id="createClassModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create New Class</h5>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="classForm">
+                    <div class="form-group">
+                        <label for="className" class="form-label">Class Name</label>
+                        <input type="text" class="form-control" id="className" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classSubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="classSubject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="classDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="classDescription" name="description" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="classroomApp.closeModal()">Cancel</button>
+                <button type="submit" form="classForm" class="btn btn-primary">Create Class</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Material Modal -->
+    <div id="uploadMaterialModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Upload Material</h5>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="materialForm">
+                    <div class="form-group">
+                        <label for="materialTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="materialTitle" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="materialDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="materialDescription" name="description" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="materialClass" class="form-label">Class</label>
+                        <select class="form-control" id="materialClass" name="class_id" required>
+                            <option value="">Select Class</option>
+                            <option value="1">Mathematics 101</option>
+                            <option value="2">English 101</option>
+                            <option value="3">Science 201</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">File</label>
+                        <div class="file-upload">
+                            <input type="file" name="file" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <p>Drag and drop files here or click to browse</p>
+                            <div class="file-preview" style="display: none;"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="classroomApp.closeModal()">Cancel</button>
+                <button type="submit" form="materialForm" class="btn btn-primary">Upload Material</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Assignment Modal -->
+    <div id="createAssignmentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Assignment</h5>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="assignmentForm">
+                    <div class="form-group">
+                        <label for="assignmentTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="assignmentTitle" name="title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assignmentDescription" class="form-label">Description</label>
+                        <textarea class="form-control rich-editor" id="assignmentDescription" name="description" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="assignmentClass" class="form-label">Class</label>
+                            <select class="form-control" id="assignmentClass" name="class_id" required>
+                                <option value="">Select Class</option>
+                                <option value="1">Mathematics 101</option>
+                                <option value="2">English 101</option>
+                                <option value="3">Science 201</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="assignmentDueDate" class="form-label">Due Date</label>
+                            <input type="datetime-local" class="form-control" id="assignmentDueDate" name="due_date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="assignmentPoints" class="form-label">Total Points</label>
+                        <input type="number" class="form-control" id="assignmentPoints" name="total_points" value="100" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Attachment (Optional)</label>
+                        <div class="file-upload">
+                            <input type="file" name="file" accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png,.gif">
+                            <div class="upload-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <p>Drag and drop files here or click to browse</p>
+                            <div class="file-preview" style="display: none;"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="classroomApp.closeModal()">Cancel</button>
+                <button type="submit" form="assignmentForm" class="btn btn-primary">Create Assignment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Send Message Modal -->
+    <div id="sendMessageModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Send Message</h5>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label for="messageRecipient" class="form-label">To</label>
+                        <select class="form-control" id="messageRecipient" name="recipient_id" required>
+                            <option value="">Select Recipient</option>
+                            <option value="1">John Smith (Teacher)</option>
+                            <option value="2">Jane Doe (Student)</option>
+                            <option value="3">Mike Johnson (Student)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="messageSubject" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="messageSubject" name="subject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="messageContent" class="form-label">Message</label>
+                        <textarea class="form-control" id="messageContent" name="message" rows="5" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="classroomApp.closeModal()">Cancel</button>
+                <button type="submit" form="messageForm" class="btn btn-primary">Send Message</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>
